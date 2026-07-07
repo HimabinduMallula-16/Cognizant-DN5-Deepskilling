@@ -1,0 +1,4 @@
+15:15:28.819 [main] DEBUG com.cognizant.AppenderLoggingExample - This is DEBUG message
+15:15:28.821 [main] INFO  com.cognizant.AppenderLoggingExample - This is INFO message
+15:15:28.821 [main] WARN  com.cognizant.AppenderLoggingExample - This is WARN message
+15:15:28.821 [main] ERROR com.cognizant.AppenderLoggingExample - This is ERROR message
