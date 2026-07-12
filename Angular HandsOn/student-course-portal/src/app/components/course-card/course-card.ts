@@ -1,47 +1,67 @@
+import { CommonModule } from '@angular/common';
+
 import {
-
-Component,
-
-Input,
-
-Output,
-
-EventEmitter,
-
-OnChanges,
-
-SimpleChanges
-
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 
+import { HighlightDirective } from '../../directives/highlight';
+import { CreditLabelPipe } from '../../pipes/credit-label-pipe';
 @Component({
-
-selector:'app-course-card',
-
-standalone:true,
-
-imports:[],
-
-templateUrl:'./course-card.html',
-
-styleUrl:'./course-card.css'
-
+  selector: 'app-course-card',
+  standalone: true,
+  imports: [CommonModule, HighlightDirective, CreditLabelPipe],
+  templateUrl: './course-card.html',
+  styleUrl: './course-card.css'
 })
+export class CourseCard implements OnChanges {
 
-export class CourseCard implements OnChanges{
+  @Input()
+  course: any;
 
-@Input()
+  @Output()
+  enrollRequested = new EventEmitter<number>();
 
-course:any;
+  isExpanded = false;
 
-@Output()
+  enrolled = false;
 
-enrollRequested=new EventEmitter<number>();
+  ngOnChanges(changes: SimpleChanges): void {
 
-ngOnChanges(changes:SimpleChanges){
+    console.log(changes);
 
-console.log(changes);
+  }
 
-}
+  enroll() {
+
+    this.enrolled = true;
+
+    this.enrollRequested.emit(this.course.id);
+
+  }
+
+  toggleDetails() {
+
+    this.isExpanded = !this.isExpanded;
+
+  }
+
+  get cardClasses() {
+
+    return {
+
+      'card--enrolled': this.enrolled,
+
+      'card--full': this.course.credits >= 4,
+
+      'expanded': this.isExpanded
+
+    };
+
+  }
 
 }
