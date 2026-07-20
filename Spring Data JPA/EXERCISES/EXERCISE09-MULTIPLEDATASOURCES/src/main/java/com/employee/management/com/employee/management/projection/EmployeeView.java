@@ -1,0 +1,11 @@
+package com.employee.management.projection;
+
+public interface EmployeeView {
+
+    Long getId();
+
+    String getName();
+
+    String getEmail();
+
+}
