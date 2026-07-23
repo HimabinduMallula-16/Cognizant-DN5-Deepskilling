@@ -1,0 +1,29 @@
+.container{
+    font-family: Arial;
+    margin:30px;
+}
+
+.box{
+    border:1px solid gray;
+    padding:15px;
+    margin-bottom:20px;
+    width:600px;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th,td{
+    padding:8px;
+    text-align:left;
+}
+
+h1{
+    color:darkblue;
+}

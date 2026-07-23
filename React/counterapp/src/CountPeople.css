@@ -1,0 +1,23 @@
+.container{
+    width:100%;
+    margin-top:220px;
+}
+
+.counter{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+button{
+    background:#90EE90;
+    border:2px solid #666;
+    padding:3px 10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+span{
+    font-size:22px;
+    font-family:Arial, Helvetica, sans-serif;
+}
